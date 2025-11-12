@@ -1,4 +1,3 @@
-# FM
 
 EXP NO: 4	GENERATION AND DETECTION OF FM
 
@@ -50,14 +49,8 @@ Algorithm
 
 PROCEDURE
 
+• Refer Algorithms and write code for the experiment. • Open SCILAB in System • Type your code in New Editor • Save the file • Execute the code • If any Error, correct it in code and execute again Verify the generated waveform using Tabulation and Model Waveform
 
-•	Refer Algorithms and write code for the experiment.
-•	Open SCILAB in System
-•	Type your code in New Editor
-•	Save the file
-•	Execute the code
-•	If any Error, correct it in code and execute again
-Verify the generated waveform using Tabulation and Model Waveform
 
 MODEL GRAPH:
 
@@ -66,24 +59,56 @@ MODEL GRAPH:
 
 Program
 
+```
+Ac=12.4;
+fc=5080;
+Am=9.4;
+fm=580;
+fs=4761;
+t=0:1/fs:2/fm;
+beta=3.6;
+Em=Am*cos(2*3.14*fm*t);
+subplot(3,1,1);
+plot(t,Em);
+xlabel("Time(s)");
+ylabel("Amplitude");
+title("Message Signal m(t)");
+Ec=Ac*cos(2*3.14*fc*t);
+subplot(3,1,2);
+plot(t,Ec);
+xlabel("Time(s)");
+ylabel("Amplitude");
+title("Carrier Signal c(t)");
+Efm=Ac*cos(2*3.14*fc*t+beta*sin(2*3.14*fm*t));
+subplot(3,1,3);
+plot(t,Efm);
+xlabel("Time(s)");
+ylabel("Amplitude");
+title("FM Modulated Signal (USB)");
+
+
+```
 
 Output Waveform
+<img width="1918" height="1142" alt="image" src="https://github.com/user-attachments/assets/64f64baa-e7f4-442f-b62d-0735dc9b078e" />
 
 
 
 Tabulation
 
 
+![WhatsApp Image 2025-11-12 at 20 00 44_dcb0a37a](https://github.com/user-attachments/assets/f6f09765-7be5-45cc-ac98-77ef04eb0565)
 
 Calculation
 
+![WhatsApp Image 2025-11-12 at 20 00 45_34c15de4](https://github.com/user-attachments/assets/f0b85d52-daba-4195-bd6e-398837a44023)
 
 
-Frequency Deviation Practical = 
+Frequency Deviation Practical = 3600.0
 
-Modulation Index Practical	= 
+Modulation Index Practical	=  0.3652
 
-Modulation Index Theoretical	=
+Modulation Index Theoretical	=0.5
 
 
 
